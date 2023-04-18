@@ -51,13 +51,13 @@ const CurrentWeather = () => {
 
   return (
     <div className = 'current-weather-component'>
-        {loading && <p className='loading'>Loading...</p>}
+        {loading && <p className='current-weather__loading'>Loading...</p>}
       {weatherData && (
         <>
-          <p className='greeting'>{message}</p>
-          <p className='location'>Location: {weatherData.location.name}, {weatherData.location.region}, {weatherData.location.country}</p>
-          <p className='temp'>Temperature: {weatherData.current.temp_c}°C / {weatherData.current.temp_f}°F</p>
-          <p className='cond'>Condition: {weatherData.current.condition.text}</p>
+          <p className='current-weather__greeting'>{message}</p>
+          <p className='current-weather__location'>Location: {weatherData.location.name}, {weatherData.location.region}, {weatherData.location.country}</p>
+          <p className='current-weather__temp'>Temperature: {weatherData.current.temp_c}°C / {weatherData.current.temp_f}°F</p>
+          <p className='current-weather__cond'>Condition: {weatherData.current.condition.text}</p>
         </>
       )}
       {!loading && !weatherData && <p className='greeting'>{message}</p>}
