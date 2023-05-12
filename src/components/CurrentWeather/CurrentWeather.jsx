@@ -12,7 +12,7 @@ const CurrentWeather = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         const { latitude, longitude } = position.coords;
-        const API_KEY = '1c270875fa2a452188354414231804';
+        const API_KEY = process.env.REACT_APP_API_KEY
         const API_URL = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${latitude},${longitude}`;
 
         fetch(API_URL)
